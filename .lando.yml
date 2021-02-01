@@ -1,0 +1,6 @@
+name: onboarding-dev
+recipe: pantheon
+config:
+  framework: wordpress
+  site: onboarding-dev
+  id: 8d60ea50-12f9-4707-8e0a-7dd85fc6f2c5
