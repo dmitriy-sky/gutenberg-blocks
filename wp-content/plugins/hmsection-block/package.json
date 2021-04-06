@@ -1,0 +1,17 @@
+{
+  "name": "hmsection-block",
+  "version": "1.0.0",
+  "description": "Homepack section block",
+  "main": "index.js",
+  "author": "bshelling",
+  "license": "MIT",
+  "scripts": {
+    "build": "wp-scripts build && node-sass --include-path sass src/sass/hmsection-block-style.scss -o build/css",
+    "dev": "wp-scripts start && node-sass --include-path sass src/sass/hmsection-block-style.scss -o build/css -w"
+  },
+  "dependencies": {
+    "@wordpress/blocks": "^8.0.0",
+    "@wordpress/scripts": "^14.0.1",
+    "node-sass": "^5.0.0"
+  }
+}
