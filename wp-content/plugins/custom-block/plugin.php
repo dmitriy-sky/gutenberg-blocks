@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: custom-block — CGB Gutenberg Block Plugin
+ * Plugin Name: Custom Block — CGB Gutenberg Block Plugin
  * Plugin URI: https://github.com/ahmadawais/create-guten-block/
  * Description: custom-block — is a Gutenberg plugin created via create-guten-block.
  * Author: mrahmadawais, maedahbatool

@@ -11,6 +11,7 @@ import './style.scss';
 
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
+const { RichText } = wp.editor;
 
 /**
  * Register: aa Gutenberg Block.
@@ -27,14 +28,20 @@ const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.b
  */
 registerBlockType( 'cgb/block-custom-block', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
-	title: __( 'custom-block - CGB Block' ), // Block title.
+	title: __( 'Custom Block' ), // Block title.
 	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
-		__( 'custom-block — CGB Block' ),
+		__( 'custom-block' ),
 		__( 'CGB Example' ),
 		__( 'create-guten-block' ),
 	],
+  attributes: {
+		content: {
+			source: 'html',
+			selector: 'h2',
+		},
+	},
 
 	/**
 	 * The edit function describes the structure of your block in the context of the editor.
@@ -48,9 +55,17 @@ registerBlockType( 'cgb/block-custom-block', {
 	 * @returns {Mixed} JSX Component.
 	 */
 	edit: ( props ) => {
+    const { className, attributes, setAttributes } = props;
+
 		// Creates a <p class='wp-block-cgb-block-custom-block'></p>.
 		return (
-			<div className={ props.className }>
+			<div className='custom-block'>
+        <RichText
+          tagName="h2"
+          className={ className }
+          value={ attributes.content }
+          onChange={ ( content ) => setAttributes( { content } ) }
+			  />
 				<p>— Hello from the backend.</p>
 				<p>
 					CGB BLOCK: <code>custom-block</code> is a new Gutenberg block
@@ -79,8 +94,11 @@ registerBlockType( 'cgb/block-custom-block', {
 	 * @returns {Mixed} JSX Frontend HTML.
 	 */
 	save: ( props ) => {
+    const { attributes } = props;
+
 		return (
 			<div className={ props.className }>
+        <RichText.Content tagName="h2" value={ attributes.content } />
 				<p>— Hello from the frontend.</p>
 				<p>
 					CGB BLOCK: <code>custom-block</code> is a new Gutenberg block.
