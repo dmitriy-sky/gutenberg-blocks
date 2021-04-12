@@ -51,12 +51,14 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			],
 		},
 	},
+
 	edit: ( props ) => {
 		const {
 			className,
 			attributes: { title, mediaID, mediaURL, ingredients, instructions },
 			setAttributes,
 		} = props;
+
 		const onChangeTitle = ( value ) => {
 			setAttributes( { title: value } );
 		};
@@ -79,10 +81,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 			<div className={ className }>
 				<RichText
 					tagName="h2"
-					placeholder={ __(
-						'Write Recipe title…',
-						'gutenberg-examples'
-					) }
+					placeholder={ __('Write Recipe title…', 'gutenberg-examples') }
 					value={ title }
 					onChange={ onChangeTitle }
 				/>
@@ -93,22 +92,14 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 						value={ mediaID }
 						render={ ( { open } ) => (
 							<Button
-								className={
-									mediaID
-										? 'image-button'
-										: 'button button-large'
-								}
+								className={ mediaID ? 'image-button' : 'button button-large' }
 								onClick={ open }
 							>
-								{ ! mediaID ? (
-									__( 'Upload Image', 'gutenberg-examples' )
+								{ ! mediaID ? ( __('Upload Image', 'gutenberg-examples')
 								) : (
 									<img
 										src={ mediaURL }
-										alt={ __(
-											'Upload Recipe Image',
-											'gutenberg-examples'
-										) }
+										alt={ __('Upload Recipe Image',	'gutenberg-examples') }
 									/>
 								) }
 							</Button>
@@ -119,10 +110,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 				<RichText
 					tagName="ul"
 					multiline="li"
-					placeholder={ __(
-						'Write a list of ingredients…',
-						'gutenberg-examples'
-					) }
+					placeholder={ __('Write a list of ingredients…', 'gutenberg-examples') }
 					value={ ingredients }
 					onChange={ onChangeIngredients }
 					className="ingredients"
@@ -132,10 +120,7 @@ registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
 					tagName="div"
 					multiline="p"
 					className="steps"
-					placeholder={ __(
-						'Write the instructions…',
-						'gutenberg-examples'
-					) }
+					placeholder={ __('Write the instructions…', 'gutenberg-examples') }
 					value={ instructions }
 					onChange={ onChangeInstructions }
 				/>
