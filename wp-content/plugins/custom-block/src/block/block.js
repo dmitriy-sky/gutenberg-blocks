@@ -29,7 +29,7 @@ const { RichText } = wp.editor;
 registerBlockType( 'cgb/block-custom-block', {
 	// Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 	title: __( 'Custom Block' ), // Block title.
-	icon: 'shield', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
+	icon: 'hammer', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
 	category: 'common', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 	keywords: [
 		__( 'custom-block' ),
@@ -66,18 +66,6 @@ registerBlockType( 'cgb/block-custom-block', {
           value={ attributes.content }
           onChange={ ( content ) => setAttributes( { content } ) }
 			  />
-				<p>— Hello from the backend.</p>
-				<p>
-					CGB BLOCK: <code>custom-block</code> is a new Gutenberg block
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
 			</div>
 		);
 	},
@@ -99,18 +87,6 @@ registerBlockType( 'cgb/block-custom-block', {
 		return (
 			<div className={ props.className }>
         <RichText.Content tagName="h2" value={ attributes.content } />
-				<p>— Hello from the frontend.</p>
-				<p>
-					CGB BLOCK: <code>custom-block</code> is a new Gutenberg block.
-				</p>
-				<p>
-					It was created via{ ' ' }
-					<code>
-						<a href="https://github.com/ahmadawais/create-guten-block">
-							create-guten-block
-						</a>
-					</code>.
-				</p>
 			</div>
 		);
 	},
