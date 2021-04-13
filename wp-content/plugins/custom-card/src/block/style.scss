@@ -1,0 +1,18 @@
+/**
+ * #.# Styles
+ *
+ * CSS for both Frontend+Backend.
+ */
+
+.wp-block-cgb-block-custom-card  {
+  background: $red;
+  border: 0.2rem solid $black;
+  color: $white;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem;
+
+  img {
+    max-height: 200px;
+  }
+}
