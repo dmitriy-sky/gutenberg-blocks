@@ -70,8 +70,10 @@ $table_prefix = 'wp_';
  * "true" in dev, but false in test and live.
  */
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define('WP_DEBUG', false);
+	define('WP_DEBUG', true);
 }
+
+define( 'SCRIPT_DEBUG', true );
 
 /* That's all, stop editing! Happy Pressing. */
 

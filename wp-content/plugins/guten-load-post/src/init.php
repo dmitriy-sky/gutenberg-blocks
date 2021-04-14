@@ -13,8 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'wp_enqueue_scripts', 'wp_react_rest_api_scripts' );
-wp_enqueue_script( 'wp-api' );
+// add_action( 'wp_enqueue_scripts', 'wp_react_rest_api_scripts' );
+// wp_enqueue_script( 'wp-api' );
 
 /**
  * Enqueue Gutenberg block assets for both frontend + backend.

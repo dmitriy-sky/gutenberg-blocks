@@ -35,7 +35,6 @@ class mySelectPosts extends Component {
     this.getOptions();
     // Bind it.
     this.onChangeSelectPost = this.onChangeSelectPost.bind(this);
-    this.consoleLog = this.consoleLog.bind(this);
   }
 
   /**
@@ -75,7 +74,7 @@ class mySelectPosts extends Component {
   render() {
     let options = [ { value: 0, label: __( 'Select a Post' ) } ];
     let output  = __( 'Loading Posts' );
-    this.props.className += ' loading';
+    // this.props.className += ' loading';
     if( this.state.posts.length > 0 ) {
       const loading = __( 'We have %d posts. Choose one.' );
       output = loading.replace( '%d', this.state.posts.length );
@@ -91,9 +90,9 @@ class mySelectPosts extends Component {
         <a href={ this.state.post.link }><h2 dangerouslySetInnerHTML={ { __html: this.state.post.title.rendered } }></h2></a>
         <p dangerouslySetInnerHTML={ { __html: this.state.post.excerpt.rendered } }></p>
         </div>;
-      this.props.className += ' has-post';
+      // this.props.className += ' has-post';
     } else {
-      this.props.className += ' no-post';
+      // this.props.className += ' no-post';
     }
     return [
        !! this.props.isSelected && (
@@ -101,7 +100,7 @@ class mySelectPosts extends Component {
           <SelectControl onChange={this.onChangeSelectPost} value={ this.props.attributes.selectedPost } label={ __( 'Select a Post' ) } options={ options } />
         </InspectorControls>
        ),
-       <div className={this.props.className}>{output}</div>
+       <div className='container'>{output}</div>
      ]
   }
 }
