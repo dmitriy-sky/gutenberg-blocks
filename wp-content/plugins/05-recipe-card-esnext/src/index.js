@@ -4,9 +4,9 @@ import { RichText, MediaUpload } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
 
 registerBlockType( 'gutenberg-examples/example-05-recipe-card-esnext', {
-	title: __( 'Example: Recipe Card (ESNext)', 'gutenberg-examples' ),
-	icon: 'index-card',
-	category: 'layout',
+	title: __( 'Recipe Card', 'gutenberg-examples' ),
+	icon: 'hammer',
+	category: 'common',
 	attributes: {
 		title: {
 			type: 'array',

@@ -15,11 +15,11 @@ function my_acf_init() {
 
 		acf_register_block( [
 			'name'            => 'acf-testimonial',
-			'title'           => __( 'Testimonial - ACF' ),
+			'title'           => __( 'ACF Block' ),
 			'description'     => __( 'A custom testimonial block, using Advanced Custom Fields Pro.' ),
 			'render_callback' => 'acf_testimonial_callback',
 			'category'        => 'formatting',
-			'icon'            => 'admin-comments',
+			'icon'            => 'hammer',
 			'keywords'        => [ 'testimonial', 'quote', 'acf' ],
 		] );
 	}
