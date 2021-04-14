@@ -1,0 +1,49 @@
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+.wp-block-cgb-block-guten-load-post {
+  background: #bada55;
+  border: 0.2rem solid #292929;
+  color: #292929;
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 2rem; }
+
+@-webkit-keyframes pulse {
+  0% {
+    background-color: #ffffff; }
+  50% {
+    background-color: #cccccc; }
+  100% {
+    background-color: #ffffff; } }
+
+@keyframes pulse {
+  0% {
+    background-color: #ffffff; }
+  50% {
+    background-color: #cccccc; }
+  100% {
+    background-color: #ffffff; } }
+
+.wp-block-cgb-block-guten-load-post {
+  padding: 0.5em;
+  border: 1px dashed rgba(0, 0, 0, 0.5); }
+  .wp-block-cgb-block-guten-load-post.no-post {
+    background: yellow;
+    -webkit-animation: none;
+            animation: none; }
+  .wp-block-cgb-block-guten-load-post.loading {
+    -webkit-animation: pulse 3s infinite;
+            animation: pulse 3s infinite; }
+  .wp-block-cgb-block-guten-load-post.has-post {
+    -webkit-animation: none;
+            animation: none; }
